@@ -29,11 +29,7 @@ export const test = base.extend<TestFixtures>({
     await use(new CheckoutPage(page));
   },
 
-  authenticatedPage: async ({ loginPage }, use) => {
-    await loginPage.goto();
-    await loginPage.login(process.env.TEST_USER!, process.env.TEST_PASSWORD!);
-    await use();
-  },
+
 });
 
 export { expect } from '@playwright/test';

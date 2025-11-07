@@ -3,7 +3,9 @@ import { test, expect } from '../fixtures/test-fixtures';
 test.describe('Demo Tests', () => {
 
 
-  test('Purchase flow with three items', async ({ authenticatedPage, inventoryPage, cartPage, checkoutPage }) => {
+  test('Purchase flow with three items', async ({ loginPage, inventoryPage, cartPage, checkoutPage }) => {
+    await loginPage.goto();
+    await loginPage.login(process.env.TEST_USER!, process.env.TEST_PASSWORD!);
     await expect(inventoryPage.title).toHaveText('Products');
 
     await inventoryPage.addToCart('Sauce Labs Bike Light');
