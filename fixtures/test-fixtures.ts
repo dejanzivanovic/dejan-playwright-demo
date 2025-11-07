@@ -31,7 +31,7 @@ export const test = base.extend<TestFixtures>({
 
   authenticatedPage: async ({ loginPage }, use) => {
     await loginPage.goto();
-    await loginPage.login('standard_user', 'secret_sauce');
+    await loginPage.login(process.env.TEST_USER!, process.env.TEST_PASSWORD!);
     await use();
   },
 });
