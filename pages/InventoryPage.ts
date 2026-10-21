@@ -8,8 +8,8 @@ export class InventoryPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.title = page.locator('.title');
-    this.menuButton = page.locator('#react-burger-menu-btn');
+    this.title = page.getByText('Products');
+    this.menuButton = page.getByRole('button', { name: 'Open Menu' });
     this.cartButton = page.locator('.shopping_cart_link');
   }
 
@@ -24,7 +24,8 @@ export class InventoryPage {
   async goToCart() {
     await this.cartButton.click();
   }
-  async logOut(){
+
+  async logOut() {
     await this.menuButton.click();
     await this.page.locator('#logout_sidebar_link').click();
   }

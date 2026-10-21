@@ -11,12 +11,12 @@ export class CheckoutPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.firstNameInput = page.locator('#first-name');
-    this.lastNameInput = page.locator('#last-name');
-    this.postalCodeInput = page.locator('#postal-code');
-    this.continueButton = page.locator('#continue');
-    this.finishButton = page.locator('#finish');
-    this.completeHeader = page.locator('.complete-header');
+    this.firstNameInput = page.getByPlaceholder('First Name');
+    this.lastNameInput = page.getByPlaceholder('Last Name');
+    this.postalCodeInput = page.getByPlaceholder('Zip/Postal Code');
+    this.continueButton = page.getByRole('button', { name: 'Continue' });
+    this.finishButton = page.getByRole('button', { name: 'Finish' });
+    this.completeHeader = page.getByText('Thank you for your order!');
   }
 
   async fillCheckoutInformation(firstName: string, lastName: string, postalCode: string) {

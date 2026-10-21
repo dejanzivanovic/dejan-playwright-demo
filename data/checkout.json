@@ -1,0 +1,18 @@
+{
+  "customer": {
+    "firstName": "Dejan",
+    "lastName": "Zivanovic",
+    "postalCode": "11050"
+  },
+  "products": {
+    "addToCart": [
+      "Sauce Labs Bike Light",
+      "Sauce Labs Backpack",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Bolt T-Shirt"
+    ],
+    "removeFromCart": [
+      "Sauce Labs Bolt T-Shirt"
+    ]
+  }
+}
