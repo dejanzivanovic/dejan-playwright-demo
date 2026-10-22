@@ -9,7 +9,7 @@ export class CartPage {
   constructor(page: Page) {
     this.page = page;
     this.title = page.getByText('Your Cart');
-    this.cartItems = page.locator('.cart_item');
+    this.cartItems = page.getByTestId('inventory-item');
     this.checkoutButton = page.getByRole('button', { name: 'Checkout' });
   }
 
